@@ -1,0 +1,193 @@
+{{/* Define links here, to include them in prose without the flow becoming ugly. */}}
+{{ $fediverse :=
+	`<a href="https://fediverse.info" target="_blank">fediverse</a>`
+}}
+{{ $handle :=
+	`<a href="https://fops.cloud/thcrt"><code>@thcrt@fops.cloud</code></a>`
+}}
+{{ $email :=
+	`<code>hello@<span class="obfuscation">OBFUSCATED</span>theocourt.com</code>`
+}}
+{{ $indieweb :=
+	`<a href="https://indieweb.org" target="_blank">indie web</a>`
+}}
+{{ $blog :=
+	`<a href="/blog">blog</a>`
+}}
+{{ $github :=
+	`<a href="https://github.com/thcrt">github</a>`
+}}
+{{ $legal :=
+	`<a href="/legal">legal</a>`
+}}
+{{ $colophon :=
+	`<a href="/colophon">colophon</a>`
+}}
+{{/* End of link definitions */}}
+
+{{ define "button" }}
+	<li>
+		<a href="{{ .link }}">
+			<img
+				src="/assets/buttons/{{ .src }}"
+				alt="{{ .alt }}"
+			/>
+		</a>
+	</li>
+{{ end }}
+
+
+<!doctype html>
+
+<html lang="en">
+	<meta charset="UTF-8" />
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1"
+	/>
+
+	<title>theo court</title>
+	<meta
+		name="description"
+		content="I'm a New Zealand-born German developer studying ICT in the Netherlands.
+                 Here you can find my blog, as well as some projects I've worked on."
+	/>
+
+	<link
+		rel="stylesheet"
+		href="/assets/base.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="/assets/index.css"
+	/>
+	<script src="/vendored/htmx.js"></script>
+
+	<header>
+		<h1>hi! my name's theo <i>(he/him)</i>.</h1>
+		<p>this is my website.</p>
+	</header>
+
+	<main>
+		<p>
+			i care a lot about privacy, human rights, good design and craftsmanship. since
+			creating and using software is both my main hobby and my planned career path,
+			i'm particularly passionate about these values in the context of technology. i
+			support libre software, open standards and the {{ $indieweb }}.
+		</p>
+		<p>
+			i've been programming recreationally since elementary school, and i've always
+			found a great deal of fulfillment in making useful things and sharing them
+			with the world. one day, i'd like to get paid for that, so i'm studying for a
+			bachelor of sciences degree in information and communication technology,
+			expecting to graduate in 2027. you can see some of my work on {{ $github }}.
+		</p>
+		<p>
+			i don't use much social media. you can contact me on the {{ $fediverse }} at
+			{{ $handle }}. you can also email me at {{ $email }}.
+		</p>
+	</main>
+
+	<footer>
+		<ul id="buttons">
+			{{ template "button" (dict
+				"link" "https://88by31.neocities.org/"
+				"src" "88x31.png"
+				"alt" "88x31"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://yesterweb.org/no-to-web3/"
+				"src" "saynotoweb3.gif"
+				"alt" "Keep the web free: Say no to Web3"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://en.wikipedia.org/wiki/This_machine_kills_fascists"
+				"src" "thismachinekillsfascists.png"
+				"alt" "This machine kills fascists"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://ublockorigin.com/"
+				"src" "ublockoriginnow.png"
+				"alt" "uBlock Origin now!"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+				"src" "cc-by-nc-sa.png"
+				"alt" "CC BY-NC-SA"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://www.mozilla.org/en-US/firefox/browsers/"
+				"src" "firefox.png"
+				"alt" "Firefox: Take back the web"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://vscodium.com"
+				"src" "vscodium.gif"
+				"alt" "Made with VSCodium"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://88x31.kate.pet/"
+				"src" "88x31-kate-pet.png"
+				"alt" "88x31.kate.pet"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://xkcd.com/1179/"
+				"src" "iso8601.png"
+				"alt" "ISO 8601 (year, month, day) now!"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://notbyai.fyi"
+				"src" "notbyai.png"
+				"alt" "Written by human, not by AI"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://www.hetzner.com/"
+				"src" "hetzner.png"
+				"alt" "Hosted on Hetzner"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://debian.org/"
+				"src" "debianpowered.gif"
+				"alt" "Debian powered"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://lynx.invisible-island.net/"
+				"src" "lynxfriendly.gif"
+				"alt" "Lynx friendly"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://jellyfin.org/"
+				"src" "jellyfin.gif"
+				"alt" "Jellyfin"
+				)
+			}}
+			{{ template "button" (dict
+				"link" "https://archive.org/"
+				"src" "preservenow.png"
+				"alt" "Preserve now!"
+				)
+			}}
+			<a
+				href="/buttons"
+				id="button-explainer"
+			>
+				about these buttons
+			</a>
+		</ul>
+		{{ include "quote.tmpl.html" }}
+		<span id="notice"> © 2024 Theo Court </span>
+	</footer>
+</html>
