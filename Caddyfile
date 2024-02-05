@@ -1,10 +1,4 @@
-:8080 {
-	root * src
-	file_server
-	templates
-	try_files {path} {path}.tmpl.html {path}/index.tmpl.html =404
-	log {
-		level INFO
-		format console
-	}
-}
+root * src
+file_server
+templates
+try_files {path} {path}.tmpl.html {path}/index.tmpl.html =404
