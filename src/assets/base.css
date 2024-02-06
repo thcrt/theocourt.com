@@ -99,7 +99,7 @@ footer {
 
 		list-style: none;
 
-		img {
+		.button-img {
 			width: 88px;
 			height: 31px;
 			image-rendering: pixelated;
@@ -107,7 +107,7 @@ footer {
 			image-rendering: crisp-edges;
 		}
 
-		a#button-explainer {
+		#button-explainer {
 			width: 88px;
 			height: 31px;
 			font-size: 0.7rem;
@@ -130,12 +130,12 @@ footer {
 		/* Quote being added */
 		opacity: 1;
 		transition: opacity 0.5s ease-in-out;
-		&.htmx-added {
+		.htmx-added {
 			opacity: 0;
 		}
 
 		/* Quote being removed */
-		&.htmx-swapping {
+		.htmx-swapping {
 			opacity: 0;
 			transition: opacity 0.2s ease-in;
 		}
